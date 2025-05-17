@@ -3,6 +3,7 @@
 [ns, fss] = audioread('x_clean_notch.wav');
 
 
+
 filterLen = 1000;      
 mu        = 0.0001;    
 lms1 = dsp.LMSFilter(filterLen, 'StepSize', mu);
