@@ -1,0 +1,19 @@
+[nr1, fs1] = audioread('NoiseRef1.wav');
+[nr2, fs2 ] = audioread('NoiseRef2.wav');
+[ns , fss] = audioread('x_clean_notch.wav');
+
+
+filterLen = 1000;            
+mu        = 0.5;              
+nlms1 = dsp.LMSFilter(filterLen,'Method','Normalized LMS','StepSize',mu);
+nlms2 = dsp.LMSFilter(filterLen,'Method','Normalized LMS','StepSize',mu);
+
+muLim      = maxstep(nlms, ref);
+nlms.StepSize = 0.25 * muLim;
+
+[yr1,r1err] = nlms1(nr1,ns);
+
+[yr2,r2err] = nlms2(nr2,r1err); 
+
+player = audioplayer(r2err,fs1);
+play(player);          
