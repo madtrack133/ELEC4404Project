@@ -3,7 +3,7 @@
 [nr2 , fs2 ] = audioread('NoiseRef2.wav');
 [ns  , fss ] = audioread('x_clean_notch.wav');
 
-filterLen = 256;  %256 takes 2 minutes with 6 core.
+filterLen = 512;  %256 takes 2 minutes with 6 core.
 lambda    = 0.9999;
 delta     = 1;         
 
