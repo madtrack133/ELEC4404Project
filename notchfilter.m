@@ -10,5 +10,8 @@ bw = wo/Q;
 
 x_clean = filtfilt(b,a,x);
 spectrogram(x_clean,512,256,512,Fs,'yaxis');
+
+player = audioplayer(x_clean,Fs);
+play(player);
 colorbar;
 colormap gray;
