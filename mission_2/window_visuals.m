@@ -27,7 +27,7 @@ for i = 1:5
     subplot(1, 2, 2);
     Y = fft(s_window, 4096); % 4096-point fft calc (4096 bins with 51 samples)
     Y = fftshift(Y); % shift Y to the center
-    Ydb = 10*log10(abs(Y) / max(abs(Y))); % normalised dB
+    Ydb = 20*log10(abs(Y) / max(abs(Y))); % normalised power dB
     fnorm = linspace(-0.5, 0.5, 4096); % normalised x-axis
 
     plot(fnorm, Ydb);
