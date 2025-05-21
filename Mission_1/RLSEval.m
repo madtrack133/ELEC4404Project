@@ -1,7 +1,7 @@
 % RLS performance sweep
-[nr1,fs] = audioread('NoiseRef1.wav');
-[nr2, ~ ] = audioread('NoiseRef2.wav');
-[ns , ~ ] = audioread('x_clean_notch.wav');
+[nr1,fs] = audioread('../NoiseRef1.wav');
+[nr2, ~ ] = audioread('../NoiseRef2.wav');
+[ns , ~ ] = audioread('../Notch_Filter/x_clean_notch.wav');
 
 projPow   = @(z,v) (dot(z,v).^2)./dot(v,v);
 
