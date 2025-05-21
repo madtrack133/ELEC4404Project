@@ -1,6 +1,6 @@
-[nr1, fs1] = audioread('NoiseRef1.wav');
-[nr2, fs2] = audioread('NoiseRef2.wav');
-[ns, fss] = audioread('NoisySignal.wav');
+[nr1, fs1] = audioread('../NoiseRef1.wav');
+[nr2, fs2] = audioread('../NoiseRef2.wav');
+[ns, fss] = audioread('../NoisySignal.wav');
 
 L = 645504; %length of samples
 f = fs1/L*(0:(L/2)); %x-axis
