@@ -13,5 +13,5 @@ lms2 = dsp.LMSFilter(filterLen, 'StepSize', mu);
 
 Final = ns-yr1-yr2;
 %will play audio directly
-player = audioplayer(r2err,Fs);
+player = audioplayer(r2err,fs2);
 play(player);
