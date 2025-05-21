@@ -18,6 +18,8 @@ Notch Filter files. Contains the files used to remove the audible hum.
 
 Mission 1 files. Contains .m files used to evaluate the LMS, NLMS, and RLS adaptive filters.
 --> ./Mission_1 (CONTAINS EnhancedSignal.wav)
+--> Our final solution is in Final.m
+--> Please ensure your PC has multithreading on and enabled in matlab to allow for Final.m to run properly
 
 Mission 2 files. Contains periodogram files, and Welch's method files.
 --> ./Mission_2
