@@ -1,7 +1,7 @@
 [nr2, fs2] = audioread('../NoiseRef2.wav');
 
 N_window = length(nr2);
-my_nfft = N_window;
+my_nfft = N_window/1312;
 
 % -------------------- Standard & Modified Periodograms --------------------
 
@@ -21,9 +21,6 @@ names = {'Rectangular' 'Bartlett' 'Blackman' 'Hamming' 'Hanning'};
 
 % -------------------- Plots --------------------
 
-xlabel('Hz');
-ylabel('dB');
-
 for i=1:5
     
     % Index current values
@@ -33,7 +30,12 @@ for i=1:5
 
     % Plot current values
     plot(f_current, 10*log10(px_current));
-    title(name);
+
+    title([name 'Window Periodogram']);
+    ylim([-160 -20]);
+    xlabel('Frequency (Hz)');
+    ylabel('Power/Frequency (dB/Hz)');
+
     disp('-- Hit any key to continue --'), pause;
 
 end
