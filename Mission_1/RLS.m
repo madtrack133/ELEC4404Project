@@ -1,10 +1,10 @@
 
-[nr1 , fs1 ] = audioread('../NoiseRef1.wav');
-[nr2 , fs2 ] = audioread('../NoiseRef2.wav');
-[ns  , fss ] = audioread('../Notch_Filter/x_clean_notch.wav');
+[nr1 , fs1 ] = audioread('NoiseRef1.wav');
+[nr2 , fs2 ] = audioread('NoiseRef2.wav');
+[ns  , fss ] = audioread('x_clean_notch.wav');
 
-filterLen = 256;
-lambda    = 0.999;
+filterLen = 128;
+lambda    = 0.9999;
 delta     = 1;         
 
 rls1 = dsp.RLSFilter('Length',filterLen, 'ForgettingFactor',lambda,'InitialInverseCovariance', delta);
@@ -19,4 +19,4 @@ figure;
 spectrogram(r2err, 2048, 1024, 2048, fs1, 'yaxis');
 colormap gray; colorbar;
 
-audiowrite('cleansignal_RLS.wav', r2err, fs1);
+audiowrite('cleansignal_RLS_128.wav', r2err, fs1);
