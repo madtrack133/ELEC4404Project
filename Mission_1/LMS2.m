@@ -1,6 +1,6 @@
-[nr1, fs1] = audioread('NoiseRef1.wav');
-[nr2, fs2] = audioread('NoiseRef2.wav');
-[ns, fss] = audioread('x_clean_notch.wav');
+[nr1, fs1] = audioread('../NoiseRef1.wav');
+[nr2, fs2] = audioread('../NoiseRef2.wav');
+[ns, fss] = audioread('../Notch_Filter/x_clean_notch.wav');
 
 
 filterLen = 1000;      

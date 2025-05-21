@@ -1,7 +1,7 @@
 
-[nr1, fs] = audioread('NoiseRef1.wav');
-[nr2, fs] = audioread('NoiseRef2.wav');
-[ns , fss] = audioread('x_clean_notch.wav');
+[nr1, fs] = audioread('../NoiseRef1.wav');
+[nr2, fs] = audioread('../NoiseRef2.wav');
+[ns , fss] = audioread('../Notch_Filter/x_clean_notch.wav');
 
 
 %power of z vs v
