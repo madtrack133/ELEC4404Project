@@ -3,8 +3,8 @@
 [nr2 , fs2 ] = audioread('NoiseRef2.wav');
 [ns  , fss ] = audioread('x_clean_notch.wav');
 
-filterLen = 512;  %256 takes 2 minutes with 6 core.
-lambda    = 0.9999;
+filterLen = 256;
+lambda    = 0.999;
 delta     = 1;         
 
 rls1 = dsp.RLSFilter('Length',filterLen, 'ForgettingFactor',lambda,'InitialInverseCovariance', delta);

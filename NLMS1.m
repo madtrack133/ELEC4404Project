@@ -4,10 +4,8 @@
 
 
 filterLen = 1000;   
-mu = 0.4;
-
-nlms1 = dsp.LMSFilter(filterLen,'Method','Normalized LMS','StepSize',mu);
-nlms2 = dsp.LMSFilter(filterLen,'Method','Normalized LMS','StepSize',mu);
+nlms1 = dsp.LMSFilter(filterLen,'Method','Normalized LMS','StepSize',0.20);
+nlms2 = dsp.LMSFilter(filterLen,'Method','Normalized LMS','StepSize',0.20);
 
 
 
@@ -15,6 +13,9 @@ nlms2 = dsp.LMSFilter(filterLen,'Method','Normalized LMS','StepSize',mu);
 
 [yr2,r2err] = nlms2(nr2,r1err); 
 
+
+
 spectrogram(r2err,2048,1024,2048,fs1,'yaxis');
+
 
 audiowrite('cleansignal.wav', r2err, fs1);
