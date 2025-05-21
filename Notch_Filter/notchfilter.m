@@ -1,5 +1,5 @@
-info = audioinfo("NoisySignal.wav");
-[x, Fs] = audioread("NoisySignal.wav");
+info = audioinfo("../NoisySignal.wav");
+[x, Fs] = audioread("../NoisySignal.wav");
 disp(Fs);
 f0 = 800;
 Q = 35;

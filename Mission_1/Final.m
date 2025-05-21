@@ -1,6 +1,6 @@
 %Stage 1 Notch filter
-info = audioinfo("NoisySignal.wav");
-[x, Fs] = audioread("NoisySignal.wav");
+info = audioinfo("../NoisySignal.wav");
+[x, Fs] = audioread("../NoisySignal.wav");
 %target frequency and quality factor
 f0 = 800;
 Q = 35;
@@ -16,9 +16,9 @@ audiowrite('x_clean_notch.wav', x_clean, Fs);
 colorbar;
 colormap gray;
 %Stage 2, adaptive filters
-[nr1 , fs1 ] = audioread('NoiseRef1.wav');
-[nr2 , fs2 ] = audioread('NoiseRef2.wav');
-[ns  , fss ] = audioread('x_clean_notch.wav');
+[nr1 , fs1 ] = audioread('../NoiseRef1.wav');
+[nr2 , fs2 ] = audioread('../NoiseRef2.wav');
+[ns  , fss ] = audioread('../Notch_Filter/x_clean_notch.wav');
 
 filterLen = 300; %Found to be best while minimising compute. takes 2-3 minutes on 6 core cpu. Do not change
 lambda    = 0.9999; %Close, but not growing memory.
