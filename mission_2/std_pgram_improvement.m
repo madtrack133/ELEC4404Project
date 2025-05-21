@@ -1,4 +1,4 @@
-[nr2, fs2] = audioread('NoiseRef2.wav');
+[nr2, fs2] = audioread('../NoiseRef2.wav');
 
 N_window = length(nr2);
 
